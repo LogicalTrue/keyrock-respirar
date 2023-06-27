@@ -19,6 +19,8 @@ Modificaciones en el nucleo en el mes de junio del 2023, constribuidores:
 -Se corrigio el archivo users.js dentro de controllers/api/users.js no tomaba parametros de actualizacion de usuario en atributo enabled y admin
 -Se corrigio el archivo users.js dentro de route/api/users.js donde el usuario base, bajo ningun contexto tenia acceso a la lista de usuarios, esto dificultaba la validacion al registro
 
-© 2018 Universidad Politécnica de Madrid.
 
- Identity Manager - Keyrock
+Derechos:
+
+© 2018 Universidad Politécnica de Madrid.
+Identity Manager - Keyrock
