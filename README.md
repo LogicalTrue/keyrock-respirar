@@ -1,4 +1,4 @@
-# Identity Manager - Keyrock
+<h1>Respirar - Keyrock</h1>
 
 <h2>
 Modificaciones en el nucleo en el mes de junio del 2023, constribuidores:
@@ -19,8 +19,6 @@ Modificaciones en el nucleo en el mes de junio del 2023, constribuidores:
 -Se corrigio el archivo users.js dentro de controllers/api/users.js no tomaba parametros de actualizacion de usuario en atributo enabled y admin
 -Se corrigio el archivo users.js dentro de route/api/users.js donde el usuario base, bajo ningun contexto tenia acceso a la lista de usuarios, esto dificultaba la validacion al registro
 
-
-
 © 2018 Universidad Politécnica de Madrid.
 
-# keyrock-respirar
+ Identity Manager - Keyrock
