@@ -2,12 +2,13 @@
 
 <h2>
 Modificaciones en el nucleo en el mes de junio del 2023, constribuidores:
-  
-David Schargorodsky - schargo7@gmail.com  
-Agostina Luciano - agostinalluciano@gmail.com
-Augusto mariño -augusto.8121@gmail.com
-Victoria Baumgertner - vickybaumgertner@gmail.com
-Alan Maisani - alanmaisani@gmail.com
+<ul>
+<li>David Schargorodsky - schargo7@gmail.com</li>  
+<li>Agostina Luciano - agostinalluciano@gmail.com</li>
+<li>Augusto mariño -augusto.8121@gmail.com</li>
+<li>Victoria Baumgertner - vickybaumgertner@gmail.com</li>
+<li>Alan Maisani - alanmaisani@gmail.com</li>
+</ul>
 </h2>
 
 <h2>
