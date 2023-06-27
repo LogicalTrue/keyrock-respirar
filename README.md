@@ -2,6 +2,7 @@
 
 <h2>
 Modificaciones en el nucleo en el mes de junio del 2023, constribuidores:
+  
 <ul>
 <li>David Schargorodsky - schargo7@gmail.com</li>  
 <li>Agostina Luciano - agostinalluciano@gmail.com</li>
