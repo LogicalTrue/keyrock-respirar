@@ -21,6 +21,5 @@ Modificaciones en el nucleo en el mes de junio del 2023, constribuidores:
 
 
 Derechos:
-
 © 2018 Universidad Politécnica de Madrid.
 Identity Manager - Keyrock
