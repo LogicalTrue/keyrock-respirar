@@ -163,6 +163,7 @@ exports.create = function (req, res) {
         if (user.admin) {
           req.session.user.admin = user.admin;
         }
+        console.log(req.session.user);
         res.redirect('/idm');
       }
     });

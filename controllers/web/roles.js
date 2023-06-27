@@ -32,6 +32,7 @@ exports.manage_roles_view = function (req, res) {
     data_usage_enabled: config_usage_control.enabled,
     csrf_token: req.csrfToken()
   });
+  console.log(req.session);
 };
 
 // GET /idm/applications/:application_id/edit/roles/assignments -- Show roles and permissions
@@ -176,6 +177,7 @@ exports.edit_role = function (req, res) {
         res.send({ text: error.errors[0].message, type: 'warning' });
       });
   }
+  console.log(req.session);
 };
 
 // DELETE /idm/applications/:application_id/edit/roles/:role_id/delete -- Delete a role
@@ -216,6 +218,8 @@ exports.delete_role = function (req, res) {
 
 // POST /idm/applications/:application_id/edit/roles -- Assing permissions to roles
 exports.role_permissions_assign = function (req, res) {
+  console.log(req.session);
+
   debug('--> role_permission_assign');
 
   const roles_ac_id = Object.keys(JSON.parse(req.body.submit_access_control_assignment));

@@ -278,14 +278,15 @@ exports.update = function (req, res) {
   check_update_body_request(req.body)
     .then(function () {
       user_previous_values = JSON.parse(JSON.stringify(req.user.dataValues));
-
       req.user.username = req.body.user.username ? req.body.user.username : req.user.username;
       req.user.email = req.body.user.email ? req.body.user.email : req.user.email;
       req.user.description = req.body.user.description ? req.body.user.description : req.user.description;
       req.user.website = req.body.user.website ? req.body.user.website : req.user.website;
       req.user.gravatar = req.body.user.gravatar ? req.body.user.gravatar : req.user.gravatar;
       req.user.extra = req.body.user.extra ? req.body.user.extra : req.user.extra;
-      req.user.enabled = true;
+      req.user.admin = req.body.user.admin ? req.body.user.admin : req.user.admin; //modificar
+      req.user.enabled =
+        'enabled' in req.body.user ? req.body.user.enabled : 'enabled' in req.user ? req.user.enabled : true; //modificar
       if (req.body.user.password) {
         req.user.password = req.body.user.password;
         req.user.date_password = new Date(new Date().getTime());

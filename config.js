@@ -1,7 +1,11 @@
+#!/usr/bin/env node
 const config = {};
+const dotenv = require('dotenv');
+dotenv.config();
 
 config.port = 3000;
-config.host = 'http://172.17.0.1:3000';
+config.basehost = '0.0.0.0';
+config.host = config.basehost + ':3000';
 config.headless = false;
 config.debug = false;
 
@@ -23,7 +27,7 @@ config.https = {
 config.email_list_type = null; // whitelist or blacklist
 
 // Enable 2fa authentication
-config.enable_2fa = process.env.IDM_ENABLE_2FA || false;
+config.enable_2fa = false;
 
 // Secret for user sessions in web
 config.session = {
@@ -38,7 +42,7 @@ config.password_encryption = {
 
 // Enable CORS
 config.cors = {
-  enabled: false,
+  enabled: true,
   options: {
     /* eslint-disable snakecase/snakecase */
     origin: '*',
@@ -68,7 +72,7 @@ config.oauth2 = {
   unique_url: false, // This parameter allows to verify that an application with the same url
   // does not exist when creating or editing it. If there are already applications
   // with the same URL, they should be changed manually
-  not_require_client_authentication_grant_type: []
+  not_require_client_authentication_grant_type: [] // Define grant types that do not require a client authentication
 };
 
 // Config oidc parameters
@@ -91,7 +95,7 @@ config.authorization = {
   level: 'basic', // basic|payload|advanced
   authzforce: {
     enabled: false,
-    host: 'localhost',
+    host: config.basehost,
     port: 8080
   }
 };
@@ -100,19 +104,19 @@ config.authorization = {
 config.usage_control = {
   enabled: false,
   ptp: {
-    host: 'localhost',
+    host: config.basehost,
     port: 8081
   }
 };
 
 // Database info
 config.database = {
-  host: 'localhost',
-  password: 'keyrock2020',
-  username: 'root',
-  database: 'idm',
+  host: process.env.MYSQL_HOST,
+  password: process.env.MYSQL_PASS,
+  username: process.env.MYSQL_USERNAME,
+  database: process.env.MYSQL_DB,
   dialect: 'mysql',
-  port: undefined
+  port: process.env.MYSQL_PORT
 };
 
 // External user authentication
@@ -122,7 +126,7 @@ config.external_auth = {
   password_encryption: 'sha1', // bcrypt and sha1 supported
   password_encryption_key: undefined,
   database: {
-    host: 'localhost',
+    host: config.basehost,
     port: undefined,
     database: 'db_name',
     username: 'db_user',
@@ -162,7 +166,7 @@ config.pr = {
   client_crt: undefined
 };
 
-// External Authorization Registry
+// External Authorization Registry (requires enabling the external participant registry)
 config.ar = {
   url: undefined,
   id: 'EU.EORI.NL000000004',
@@ -172,7 +176,7 @@ config.ar = {
 
 // Email configuration
 config.mail = {
-  host: 'localhost',
+  host: config.basehost,
   port: 25,
   from: 'noreply@localhost',
   secure: false,
@@ -187,7 +191,7 @@ config.mail = {
 // Config themes
 config.site = {
   title: 'Identity Manager',
-  theme: 'default'
+  theme: 'fiwarelab'
 };
 
 // Config language
@@ -198,7 +202,7 @@ config.lang = {
 // Config eIDAS Authentication
 config.eidas = {
   enabled: false,
-  gateway_host: 'localhost',
+  gateway_host: config.basehost,
   node_host: 'https://se-eidas.redsara.es/EidasNode/ServiceProvider',
   metadata_expiration: 60 * 60 * 24 * 365 // One year
 };
